@@ -3,218 +3,180 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <header>
-    <h1>Andrew Damanik</h1>
-    <p>
-      Junior at Arizona State University studying Applied Business and
-      Technology Solutions
-    </p>
-    <a href="#contact">Get in touch!</a>
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Hi, I'm Andrew! I'm a junior at Arizona State University studying
-        Applied Business and Technology Solutions, and I'm interested in product
-        management, AI/ML, and business analytics. I co-founded Kopi Deo, a
-        restaurant in Jakarta, where I use customer feedback to improve our menu
-        and dining experience. Outside of school and work, you'll find me
-        producing music and DJing as SHIDEN, playing soccer, padel, or working
-        on my golf game.
+  <main class="hero">
+    <div class="intro">
+      <p class="eyebrow">Business + Tech · ASU '28</p>
+      <h1>Andrew Damanik</h1>
+      <p class="lead">
+        Junior at Arizona State University studying Applied Business and
+        Technology Solutions, interested in product management and AI/ML.
       </p>
-    </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+      <div class="now">
+        <h2>Currently</h2>
+        <ul>
+          <li>Co-Founder at Kopi Deo</li>
+          <li>B.A. Applied Business & Technology Solutions at ASU</li>
+        </ul>
+      </div>
 
-      <article>
-        <h3>The Little House: Nonprofit website</h3>
-        <p>
-          <strong>Role:</strong> Project Leader · Code the Change, Fall 2023
-        </p>
-        <p>
-          A website for an education nonprofit in Indonesia that runs 4 schools
-          for 200+ underprivileged children.
-        </p>
-        <p>
-          <strong>What I did:</strong> I co-led a team of 8 student developers from
-          planning to delivery. I designed the Home, About, History, Gallery and Donate
-          pages in Figma, split the build into tasks the team could take on, and ran
-          weekly check-ins to clear blockers and keep us on schedule.
-        </p>
-        <p>
-          <strong>Built with:</strong> Figma, Python, Django, HTML, CSS, JavaScript
-        </p>
-        <a href="https://github.com/andrew415/Team1-Thelttlhouse"
-          >View project</a
-        >
-      </article>
-
-      <article>
-        <h3>Freedom Wall: Student message board</h3>
-        <p>
-          <strong>Role:</strong> UI/UX Designer · Google Developer Student Club, Fall
-          2023
-        </p>
-        <p>
-          A place for students to post and reply anonymously, after signing in
-          with Google.
-        </p>
-        <p>
-          <strong>What I did:</strong> I designed the 4 core pages in Figma and mapped
-          out how a student goes from signing in to making their first post, including
-          every screen state for posting and replying. I worked directly with 3 developers
-          to make sure the final Next.js app matched the designs on both desktop and
-          mobile.
-        </p>
-        <p>
-          <strong>Built with:</strong> Figma, Next.js, React, Tailwind CSS, Firebase
-          Auth
-        </p>
-      </article>
-
-      <article>
-        <h3>EcoHabits: Campus sustainability site</h3>
-        <p><strong>Role:</strong> Developer · 2-day hackathon</p>
-        <p>
-          I noticed how many students at my school relied on plastic water
-          bottles, so I mapped every place they could refill instead.
-        </p>
-        <p>
-          <strong>What I did:</strong> I walked campus, photographed 25 water fountains,
-          and built an interactive Google Maps page with directions to each one. I
-          also built the 4-page site around it, including a teammate's electricity
-          bill calculator, and shipped it to GitHub Pages before the deadline.
-        </p>
-        <p>
-          <strong>Built with:</strong> HTML, W3.CSS, JavaScript, Google Maps API
-        </p>
-        <a href="https://github.com/andrew415/EcoHabits-Final4">View project</a>
-      </article>
-
-      <article>
-        <h3>Spotify Song Recommender</h3>
-        <p>
-          <strong>Role:</strong> Data Engineer · Project Bracket, Fall 2023, 8-person
-          team
-        </p>
-        <p>
-          A music player that suggests songs similar to the ones already in your
-          playlist.
-        </p>
-        <p>
-          <strong>What I did:</strong> I merged datasets with 586K+ tracks and 1.1M+
-          artists in pandas, and pulled users' playlists through the Spotify API.
-          That data fed the team's recommendation model, which matched songs by genre
-          and popularity.
-        </p>
-        <p><strong>Built with:</strong> Python, pandas, Spotipy, Jupyter</p>
-        <a
-          href="https://github.com/Nxver-GitHub/ProjectBracket-AI-WebDev--Project-FA23"
-          >View project</a
-        >
-      </article>
-
-      <article>
-        <h3>Facial Emotion Recognition</h3>
-        <p>
-          <strong>Role:</strong> Data Acquisition · Project Bracket, 6-person team
-        </p>
-        <p>
-          A model that reads facial expressions in real time and labels them as
-          anger, fear, happiness or sadness.
-        </p>
-        <p>
-          <strong>What I did:</strong> I set up the data pipeline: organizing the
-          workspace and the labeled image folders the model was trained on, using
-          Python and OpenCV.
-        </p>
-        <p>
-          <strong>Built with:</strong> Python, OpenCV, TensorFlow (SSD MobileNet V2)
-        </p>
-      </article>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:andrewhasintongan@gmail.com"
-          >andrewhasintongan@gmail.com</a
-        >
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/andrew-damanik">LinkedIn</a> ·
+      <p class="contact">
+        <a href="mailto:andrewhasintongan@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/andrew-damanik">LinkedIn</a>
         <a href="https://github.com/andrew415">GitHub</a>
       </p>
-    </section>
-  </main>
+    </div>
 
-  <footer>
-    <p>© 2026 Andrew Damanik</p>
-  </footer>
+    <div class="gallery">
+      <div class="track" id="track">
+        <img src="/me-1.JPG" alt="Me at Time Square" />
+        <img src="/me-2.JPG" alt="My first big show" />
+        <img src="/me-3.JPG" alt="DJing at Golden Gate Bridge" />
+        <img src="/me-4.JPG" alt="Golfing with the homies" />
+        <img src="/me-5.JPG" alt="Me playing padel" />
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </main>
 </Layout>
 
-<style>
-  header,
-  main,
-  footer {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px;
+<script>
+  const track = document.getElementById("track")!;
+  const dotsBox = document.getElementById("dots")!;
+  const slides = track.querySelectorAll("img");
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.setAttribute("aria-label", `Show photo ${i + 1}`);
+    dot.addEventListener("click", () => {
+      track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
+    });
+    dotsBox.appendChild(dot);
+  });
+
+  const dots = dotsBox.querySelectorAll("button");
+
+  function update() {
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   }
 
-  header {
-	padding-top: 96px;
-	padding-bottom: 64px;
+  track.addEventListener("scroll", update);
+  update();
+</script>
+
+<style>
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
   }
 
   h1 {
-	font-size: clamp(44px, 8vw, 72px);
-	margin: 0 0 16px;
+    font-size: clamp(44px, 7vw, 72px);
+    margin: 0 0 16px;
   }
 
-  header p {
-	font-size: 20px;
-	color: var(--muted);
-	margin: 0 0 24px;
+  .lead {
+    font-size: 19px;
+    color: var(--muted);
+    margin: 0 0 32px;
   }
 
-  section {
-	padding: 48px 0;
-	border-top: 1px solid var(--line);
-
+  .now h2 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 8px;
   }
 
-  h2 {
-	font-size: 32px;
-	margin: 0 0 24px;
+  .now ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
   }
 
-  article {
-	padding: 24px 0;
+  .now li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
   }
 
-  article + article {
-	border-top: 1px solid var(--line);
+  .contact {
+    display: flex;
+    gap: 20px;
+    margin: 0;
   }
 
-  article h3 {
-	font-size: 24px;
-	margin: 0 0 8px;
+  .gallery {
+    width: 100%;
   }
 
-  article p {
-	margin: 4px 0;
-
+  .track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    border-radius: 4px;
   }
 
-  footer {
-	padding-top: 48px;
-	padding-bottom: 48px;
-	color: var(--muted)
-	font-size: 14px;
+  .track::-webkit-scrollbar {
+    display: none;
   }
 
+  .track img {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    scroll-snap-align: start;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .dots :global(button) {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--line);
+    cursor: pointer;
+  }
+
+  .dots :global(button.active) {
+    background: var(--accent);
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      min-height: auto;
+    }
+    .gallery {
+      order: -1;
+      max-width: 360px;
+    }
+  }
 </style>
