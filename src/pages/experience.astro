@@ -1,0 +1,516 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const statement = [
+  "I co-founded Kopi Deo in Jakarta",
+  "and grew it from an idea",
+  "into a restaurant with 40 employees.",
+  "Along the way, I learned that great products",
+  "start with listening",
+  "to the people who use them.",
+];
+
+const stats = [
+  {
+    to: 40,
+    prefix: "",
+    suffix: "",
+    label: "employees across kitchen, service, cashier, and support",
+  },
+  {
+    to: 10,
+    prefix: "+",
+    suffix: "%",
+    label: "rainy-season revenue after redesigning the dining area",
+  },
+  {
+    to: 5,
+    prefix: "",
+    suffix: "+",
+    label: "years running, from concept to daily operations",
+  },
+];
+
+const campus = [
+  {
+    org: "DVC Earth Club",
+    role: "Director of Technology",
+    date: "Nov 2025 – Dec 2025",
+    summary: "Ran the club's online community across Instagram and Discord.",
+    bullets: [
+      "Managed the club's Instagram, creating posts to promote meetings, events, and sustainability initiatives.",
+      "Set up and moderated the club's Discord server to keep members connected and informed between meetings.",
+    ],
+  },
+  {
+    org: "DVC Model United Nations",
+    role: "Vice President of Operations",
+    date: "Jan 2024 – May 2025",
+    summary:
+      "Kept the club running smoothly and prepared members for Model United Nations conferences.",
+    bullets: [
+      "Organized club meetings, prepared members for conferences, and coordinated responsibilities and prep timelines each semester.",
+      "Kept officers and members connected, so everyone knew about deadlines and upcoming events.",
+    ],
+  },
+  {
+    org: "DVC Soccer Club",
+    role: "Secretary",
+    date: "Aug 2023 – Aug 2024",
+    summary:
+      "Kept the club organized and helped plan its biggest event of the year.",
+    bullets: [
+      "Recorded meeting notes and tracked action items so officers stayed aligned on decisions.",
+      "Helped set the club's goals for the year with the officer team.",
+      "Helped plan an 8-team tournament, from scheduling to day-of coordination.",
+    ],
+  },
+  {
+    org: "DVC Math Club",
+    role: "Chief Strategy Officer",
+    date: "Aug 2023 – May 2024",
+    summary:
+      "Ran competition prep and events for a club of 20–30 regular members.",
+    bullets: [
+      "Led competition prep that supported DVC's 1st-place finish in AMATYC Round 1.",
+      "Organized Data Science and Math in Business workshops, plus a guest talk from a data scientist.",
+      "Ran a Jeopardy-style math game that drew the club's highest turnout of the semester.",
+    ],
+  },
+  {
+    org: "Code the Change",
+    role: "Project Leader",
+    date: "Aug 2023 – Dec 2023",
+    summary:
+      "Co-led a student team building a website for The Little House, a nonprofit running 4 schools for 200+ children in Indonesia.",
+    bullets: [
+      "Led an 8-member team from project planning through website delivery.",
+      "Designed the Home, About, History, Gallery, and Donate pages in Figma.",
+      "Ran weekly check-ins, broke features into tasks, and shared resources to help teammates build skills.",
+    ],
+  },
+  {
+    org: "Google Developer Student Club",
+    role: "Developer (UI/UX Design)",
+    date: "Oct 2023 – Dec 2023",
+    summary:
+      "Designed Freedom Wall, a message board where students post and reply after signing in with Google.",
+    bullets: [
+      "Designed 4 core pages in Figma, from Google sign-in to a student's first post.",
+      "Mapped user flows and screen states for posting and replying.",
+      "Worked with 3 developers to build it as a responsive Next.js app.",
+    ],
+  },
+];
+
+const education = [
+  {
+    school: "Arizona State University",
+    degree: "B.A. Applied Business and Technology Solutions",
+    date: "Aug 2026 – May 2028",
+    detail:
+      "Business Statistics, Microeconomic Principles, Computer Applications and Information Technology",
+  },
+  {
+    school: "Diablo Valley College",
+    degree: "Computer Science",
+    date: "Jan 2023 – May 2025",
+    detail:
+      "Object-Oriented Programming in C++, Data Structures and Algorithms, Calculus I-II,  Linear Algebra, Intro to Data Science",
+  },
+];
+---
+
+<Layout>
+  <main class="page experience">
+    <section class="page-intro intro-center">
+      <h1>Experience</h1>
+      <p>Where I've worked, led, and learned.</p>
+      <p class="scroll-hint">Scroll ↓</p>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section>
+      <p class="section-label">Work Experience</p>
+      <h2>Co-Founder & Operations Manager</h2>
+      <p class="org">Kopi Deo · Jakarta, Indonesia</p>
+      <p class="date">September 2021 – Present</p>
+
+      <div class="highlight-zone" id="highlight">
+        <div class="highlight-sticky">
+          <p class="highlight-text">
+            {statement.map((line) => <span>{line} </span>)}
+          </p>
+        </div>
+      </div>
+
+      <div class="stats" id="stats">
+        {
+          stats.map((stat) => (
+            <div class="stat">
+              <p
+                class="num"
+                data-to={stat.to}
+                data-prefix={stat.prefix}
+                data-suffix={stat.suffix}
+              >
+                {stat.prefix}0{stat.suffix}
+              </p>
+              <p class="stat-label">{stat.label}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <ul class="details">
+        <li>
+          Used customer feedback to find gaps in the menu and launch new
+          appetizers, increasing average revenue per customer.
+        </li>
+        <li>
+          Lead hiring, onboarding, payroll, inventory, and cash controls to keep
+          service quality and finances on track.
+        </li>
+        <li>
+          Added a high roof and clear rain blinds so every outdoor table stays
+          open in wet weather.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CAMPUS INVOLVEMENT -->
+    <section>
+      <p class="section-label">Campus Involvement</p>
+      <div class="timeline" id="timeline">
+        <div class="track"></div>
+        <div class="fill" id="fill"></div>
+        {
+          campus.map((item) => (
+            <div class="row">
+              <aside>
+                <h3>{item.org}</h3>
+                <p>{item.role}</p>
+                <p class="date">{item.date}</p>
+              </aside>
+              <div class="body">
+                <p>{item.summary}</p>
+                <ul>
+                  {item.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <p class="section-label">Education</p>
+      {
+        education.map((item) => (
+          <div class="row edu">
+            <aside>
+              <h3>{item.school}</h3>
+              <p class="date">{item.date}</p>
+            </aside>
+            <div class="body">
+              <p>
+                <strong>{item.degree}</strong>
+              </p>
+              <p class="muted">Relevant coursework: {item.detail}</p>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Text highlight
+  const zone = document.getElementById("highlight")!;
+  const spans = Array.from(zone.querySelectorAll("span"));
+
+  // Timeline
+  const timeline = document.getElementById("timeline")!;
+  const fill = document.getElementById("fill")!;
+  const rows = Array.from(timeline.querySelectorAll<HTMLElement>(".row"));
+
+  function clamp(value: number) {
+    return Math.max(0, Math.min(1, value));
+  }
+
+  function onScroll() {
+    const vh = innerHeight;
+
+    const z = zone.getBoundingClientRect();
+    const progress = reduceMotion
+      ? 1
+      : clamp((vh * 0.7 - z.top) / (z.height - vh * 0.5));
+    spans.forEach((span, i) =>
+      span.classList.toggle("on", progress > i / spans.length),
+    );
+
+    const t = timeline.getBoundingClientRect();
+    const filled = Math.max(0, Math.min(t.height, vh * 0.6 - t.top));
+    fill.style.height = `${filled}px`;
+    rows.forEach((row) =>
+      row.classList.toggle("lit", row.offsetTop + 12 <= filled),
+    );
+  }
+
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+  onScroll();
+
+  // Impact counters
+  const statsBox = document.getElementById("stats")!;
+  const numbers = Array.from(statsBox.querySelectorAll<HTMLElement>(".num"));
+
+  function runCounters() {
+    numbers.forEach((el) => {
+      const to = Number(el.dataset.to);
+      const prefix = el.dataset.prefix ?? "";
+      const suffix = el.dataset.suffix ?? "";
+      const duration = reduceMotion ? 0 : 1400;
+      const start = performance.now();
+
+      function tick(now: number) {
+        const t = duration ? Math.min((now - start) / duration, 1) : 1;
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = `${prefix}${Math.round(to * eased)}${suffix}`;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        runCounters();
+        statsObserver.disconnect();
+      }
+    },
+    { threshold: 0.4 },
+  );
+  statsObserver.observe(statsBox);
+</script>
+
+<style>
+  .intro-center {
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-center h1 {
+    font-size: clamp(64px, 12vw, 140px);
+    line-height: 0.95;
+    margin-bottom: 24px;
+  }
+
+  .intro-center p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .experience {
+    max-width: 960px;
+  }
+
+  section {
+    padding-bottom: 96px;
+  }
+
+  .section-label {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+    margin: 0 0 32px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 8px;
+  }
+
+  .org {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .date {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 2px 0 0;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .highlight-zone {
+    height: 200vh;
+  }
+
+  .highlight-sticky {
+    position: sticky;
+    top: 25vh;
+    padding: 24px 0;
+  }
+
+  .highlight-text {
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .highlight-text span {
+    color: #c9c6bd;
+    transition: color 0.3s ease;
+  }
+
+  .highlight-text span.on {
+    color: var(--text);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin: 0 0 48px;
+  }
+
+  .num {
+    font-size: clamp(48px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .stat-label {
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+
+  .details {
+    padding-left: 20px;
+    max-width: 680px;
+  }
+
+  .details li {
+    margin: 8px 0;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .track,
+  .fill {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 2px;
+  }
+
+  .track {
+    bottom: 0;
+    background: var(--line);
+  }
+
+  .fill {
+    height: 0;
+    background: var(--accent);
+  }
+
+  .row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    padding: 8px 0 72px;
+  }
+
+  .timeline .row::before {
+    content: "";
+    position: absolute;
+    left: -41px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--line);
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .timeline .row.lit::before {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  aside {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+  }
+
+  aside h3 {
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+
+  aside p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .body p {
+    margin: 0 0 12px;
+  }
+
+  .body ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .body li {
+    margin: 6px 0;
+  }
+
+  .edu {
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 760px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    aside {
+      position: static;
+    }
+  }
+</style>

@@ -1,0 +1,203 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="page wide">
+    <section class="page-intro about-intro">
+      <div>
+        <h1>About Me</h1>
+        <p>
+          Hi, I'm Andrew! I'm a junior at Arizona State University studying
+          Applied Business and Technology Solutions, with a Computer Science
+          foundation from Diablo Valley College.
+        </p>
+        <p>
+          Outside of school, you'll find me producing music and DJing as SHIDEN,
+          playing soccer and padel, or working on my golf game.
+        </p>
+        <p class="scroll-hint">Scroll ↓</p>
+      </div>
+      <figure>
+        <img src="/about.JPG" alt="Portrait of me" />
+        <figcaption>Andrew Damanik · Tempe, AZ</figcaption>
+      </figure>
+    </section>
+
+    <div class="content">
+      <section class="reveal">
+        <h2>Who I Am</h2>
+        <p>
+          I sit where business and technology meet. I co-founded Kopi Deo, a
+          restaurant in Jakarta, and learned product thinking the hands-on way:
+          listening to customers, spotting what was missing from the menu, and
+          shipping changes that moved revenue.
+        </p>
+        <p>
+          In school, I've led student teams building websites for a nonprofit,
+          designed user flows for a campus app, and worked with data on machine
+          learning projects. What ties it all together is that I like figuring
+          out what people actually need, then organizing the team and the work
+          to build it.
+        </p>
+      </section>
+
+      <section class="reveal">
+        <h2>What I'm Looking For</h2>
+        <p>
+          I'm currently looking for <strong>Summer 2027 internships</strong> in product
+          management or technology consulting, preferrably on teams working with AI,
+          data, or consumer products. If you're hiring or just want to chat,
+        </p>
+        <p>
+          <a href="mailto:andrewhasintongan@gmail.com">send me an email</a>.
+        </p>
+      </section>
+
+      <section class="reveal">
+        <h2>What I'm Working On</h2>
+        <ul>
+          <li>
+            Building this portfolio with Agile/Scrum, with sprints and a backlog
+            in Jira linked to GitHub.
+          </li>
+          <li>Supporting operations at Kopi Deo from Arizona.</li>
+          <li>Producing new music as SHIDEN.</li>
+        </ul>
+      </section>
+
+      <section class="reveal">
+        <h2>Skills</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Skills</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product</td>
+              <td
+                >Agile/Scrum, Jira, user research, process design, project
+                management</td
+              >
+            </tr>
+            <tr>
+              <td>Design</td>
+              <td>Figma, UI/UX design, user flows, wireframing</td>
+            </tr>
+            <tr>
+              <td>Data</td>
+              <td>Excel/Sheets, data analysis</td>
+            </tr>
+            <tr>
+              <td>Languages</td>
+              <td>Python, C/C++, Swift, HTML/CSS</td>
+            </tr>
+            <tr>
+              <td>Tools</td>
+              <td>Git, GitHub, VS Code, Astro, Vercel, Claude Code</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .about-intro {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-intro p + p {
+    margin-top: 16px;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figure img {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+  }
+
+  figcaption {
+    margin-top: 12px;
+    text-align: right;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .content {
+    max-width: 720px;
+  }
+
+  .content section {
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .content h2 {
+    margin-top: 0;
+  }
+
+  .content ul {
+    padding-left: 20px;
+  }
+
+  .content li {
+    margin: 8px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 16px 12px 0;
+  }
+
+  td {
+    padding: 14px 16px 14px 0;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  td:first-child {
+    font-weight: 500;
+    width: 140px;
+  }
+
+  @media (max-width: 760px) {
+    .about-intro {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    figure img {
+      margin: 0;
+    }
+    figcaption {
+      text-align: left;
+    }
+  }
+</style>
