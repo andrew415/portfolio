@@ -1,11 +1,167 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <header>
+    <h1>Andrew Damanik</h1>
+    <p>
+      Junior at Arizona State University studying Applied Business and
+      Technology Solutions
+    </p>
+    <a href="#contact">Get in touch!</a>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Hi, I'm Andrew! I'm a junior at Arizona State University studying
+        Applied Business and Technology Solutions, and I'm interested in product
+        management, AI/ML, and business analytics. I co-founded Kopi Deo, a
+        restaurant in Jakarta, where I use customer feedback to improve our menu
+        and dining experience. Outside of school and work, you'll find me
+        producing music and DJing as SHIDEN, playing soccer, padel, or working
+        on my golf game.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article>
+        <h3>The Little House: Nonprofit website</h3>
+        <p>
+          <strong>Role:</strong> Project Leader · Code the Change, Fall 2023
+        </p>
+        <p>
+          A website for an education nonprofit in Indonesia that runs 4 schools
+          for 200+ underprivileged children.
+        </p>
+        <p>
+          <strong>What I did:</strong> I co-led a team of 8 student developers from
+          planning to delivery. I designed the Home, About, History, Gallery and Donate
+          pages in Figma, split the build into tasks the team could take on, and ran
+          weekly check-ins to clear blockers and keep us on schedule.
+        </p>
+        <p>
+          <strong>Built with:</strong> Figma, Python, Django, HTML, CSS, JavaScript
+        </p>
+        <a href="https://github.com/andrew415/Team1-Thelttlhouse"
+          >View project</a
+        >
+      </article>
+
+      <article>
+        <h3>Freedom Wall: Student message board</h3>
+        <p>
+          <strong>Role:</strong> UI/UX Designer · Google Developer Student Club, Fall
+          2023
+        </p>
+        <p>
+          A place for students to post and reply anonymously, after signing in
+          with Google.
+        </p>
+        <p>
+          <strong>What I did:</strong> I designed the 4 core pages in Figma and mapped
+          out how a student goes from signing in to making their first post, including
+          every screen state for posting and replying. I worked directly with 3 developers
+          to make sure the final Next.js app matched the designs on both desktop and
+          mobile.
+        </p>
+        <p>
+          <strong>Built with:</strong> Figma, Next.js, React, Tailwind CSS, Firebase
+          Auth
+        </p>
+      </article>
+
+      <article>
+        <h3>EcoHabits: Campus sustainability site</h3>
+        <p><strong>Role:</strong> Developer · 2-day hackathon</p>
+        <p>
+          I noticed how many students at my school relied on plastic water
+          bottles, so I mapped every place they could refill instead.
+        </p>
+        <p>
+          <strong>What I did:</strong> I walked campus, photographed 25 water fountains,
+          and built an interactive Google Maps page with directions to each one. I
+          also built the 4-page site around it, including a teammate's electricity
+          bill calculator, and shipped it to GitHub Pages before the deadline.
+        </p>
+        <p>
+          <strong>Built with:</strong> HTML, W3.CSS, JavaScript, Google Maps API
+        </p>
+        <a href="https://github.com/andrew415/EcoHabits-Final4">View project</a>
+      </article>
+
+      <article>
+        <h3>Spotify Song Recommender</h3>
+        <p>
+          <strong>Role:</strong> Data Engineer · Project Bracket, Fall 2023, 8-person
+          team
+        </p>
+        <p>
+          A music player that suggests songs similar to the ones already in your
+          playlist.
+        </p>
+        <p>
+          <strong>What I did:</strong> I merged datasets with 586K+ tracks and 1.1M+
+          artists in pandas, and pulled users' playlists through the Spotify API.
+          That data fed the team's recommendation model, which matched songs by genre
+          and popularity.
+        </p>
+        <p><strong>Built with:</strong> Python, pandas, Spotipy, Jupyter</p>
+        <a
+          href="https://github.com/Nxver-GitHub/ProjectBracket-AI-WebDev--Project-FA23"
+          >View project</a
+        >
+      </article>
+
+      <article>
+        <h3>Facial Emotion Recognition</h3>
+        <p>
+          <strong>Role:</strong> Data Acquisition · Project Bracket, 6-person team
+        </p>
+        <p>
+          A model that reads facial expressions in real time and labels them as
+          anger, fear, happiness or sadness.
+        </p>
+        <p>
+          <strong>What I did:</strong> I set up the data pipeline: organizing the
+          workspace and the labeled image folders the model was trained on, using
+          Python and OpenCV.
+        </p>
+        <p>
+          <strong>Built with:</strong> Python, OpenCV, TensorFlow (SSD MobileNet V2)
+        </p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:andrewhasintongan@gmail.com"
+          >andrewhasintongan@gmail.com</a
+        >
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/andrew-damanik">LinkedIn</a> ·
+        <a href="https://github.com/andrew415">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Andrew Damanik</p>
+  </footer>
 </Layout>
+
+<style>
+  header,
+  main,
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+</style>
