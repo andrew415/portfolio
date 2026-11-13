@@ -1,0 +1,458 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  {
+    tag: "Nonprofit website",
+    title: "The Little House",
+    description: "A website for an education nonprofit in Indonesia that runs 4 schools for 200+ underprivileged children.",
+    role: "Project Leader",
+    team: "8-person team",
+    stack: ["Figma", "Django", "Python", "HTML/CSS"],
+    image: "/little-house.png",
+    imageAlt: "Figma design of The Little House home page",
+    areas: [
+      { name: "Project lead", mine: true },
+      { name: "UI design", mine: true },
+      { name: "Frontend", mine: true },
+      { name: "Backend", mine: false },
+    ],
+    myPart: [
+      "Designed the Home, About, History, Gallery, and Donate pages in Figma",
+      "Co-led the team and ran weekly check-ins",
+      "Broke features into tasks for developers",
+    ],
+    link: "https://github.com/andrew415/Team1-Thelttlhouse",
+  },
+  {
+    tag: "Web app design",
+    title: "Freedom Wall",
+    description: "A student message board where students post and reply after signing in with Google.",
+    role: "UI/UX Designer",
+    team: "Me + 3 developers",
+    stack: ["Figma", "Next.js", "React", "Firebase"],
+    image: "/freedom-wall.png",
+    imageAlt: "Landing page of Freedom Wall",
+    areas: [
+      { name: "UI design", mine: true },
+      { name: "User flows", mine: true },
+      { name: "Frontend", mine: false },
+      { name: "Auth", mine: false },
+    ],
+    myPart: [
+      "Designed the 4 core pages in Figma",
+      "Mapped user flows for posting and replying",
+      "Worked with developers so the app matched the designs",
+    ],
+    link: "https://gdsc-freedom-wall.vercel.app/",
+  },
+  {
+    tag: "Hackathon",
+    title: "EcoHabits",
+    description: "An interactive map of 25 campus water fountains to help students skip single-use plastic bottles.",
+    role: "Developer",
+    team: "Small team · 2 days",
+    stack: ["HTML", "W3.CSS", "JavaScript", "Google Maps API"],
+    image: "/ecohabits.jpg",
+    imageAlt: "EcoHabits campus water fountain map",
+    areas: [
+      { name: "Research", mine: true },
+      { name: "Fountain map", mine: true },
+      { name: "Website", mine: true },
+      { name: "Bill calculator", mine: false },
+    ],
+    myPart: [
+      "Photographed all 25 fountains on campus",
+      "Built the Google Maps page with directions",
+      "Built the 4-page site and deployed it",
+    ],
+    link: "https://github.com/andrew415/EcoHabits-Final4",
+  },
+  {
+    tag: "Data / AI",
+    title: "Spotify Song Recommender",
+    description: "A music player that suggests songs similar to the ones already in your playlist.",
+    role: "Data Engineer",
+    team: "8-person team",
+    stack: ["Python", "pandas", "Spotipy", "Jupyter"],
+    image: "/spotify.png",
+    imageAlt: "Spotify song recommender notebook",
+    areas: [
+      { name: "Data prep", mine: true },
+      { name: "Spotify API", mine: true },
+      { name: "Model", mine: false },
+      { name: "Web player", mine: false },
+    ],
+    myPart: [
+      "Merged datasets of 586K+ tracks and 1.1M+ artists",
+      "Pulled users' playlists through the Spotify API",
+    ],
+    link: "https://github.com/Nxver-GitHub/ProjectBracket-AI-WebDev--Project-FA23",
+  },
+  {
+    tag: "Machine learning",
+    title: "Facial Emotion Recognition",
+    description: "A real-time model that labels facial expressions as anger, fear, happiness, or sadness.",
+    role: "Data Acquisition",
+    team: "6-person team",
+    stack: ["Python", "OpenCV", "TensorFlow"],
+    image: "/emotion.png",
+    imageAlt: "Facial emotion recognition demo",
+    areas: [
+      { name: "Dataset setup", mine: true },
+      { name: "Model training", mine: false },
+      { name: "Real-time app", mine: false },
+    ],
+    myPart: [
+      "Set up the workspace and labeled image folders for 4 emotions",
+      "Prepared the data the model was trained on",
+    ],
+    link: "",
+  },
+  {
+    tag: "This website",
+    title: "Portfolio",
+    description: "This site, built with Scrum: sprints and a backlog in Jira, linked to GitHub, deployed on Vercel.",
+    role: "Product Owner & Developer",
+    team: "Solo",
+    stack: ["Astro", "CSS", "Jira", "Vercel"],
+    image: "portfolio.png",
+    imageAlt: "Jira board for this portfolio",
+    areas: [
+      { name: "Planning", mine: true },
+      { name: "Design", mine: true },
+      { name: "Build", mine: true },
+      { name: "Deploy", mine: true },
+    ],
+    myPart: [
+      "Ran sprints, story points, and retros in Jira",
+      "Designed and built every page",
+      "Linked commits to tickets and deployed on Vercel",
+    ],
+    link: "https://github.com/andrew415/portfolio",
+  },
+];
+---
+
+<Layout>
+  <main class="page wide">
+    <section class="page-intro intro-center">
+      <h1>Projects</h1>
+      <p>What I've led, designed, built, and contributed.</p>
+      <p class="scroll-hint">Scroll ↓</p>
+    </section>
+
+    <div class="legend">
+      <span><i class="dot mine-dot"></i>My part</span>
+      <span><i class="dot team-dot"></i>Teammates' part</span>
+    </div>
+
+    <div class="grid">
+      {
+        projects.map((project, i) => (
+          <div class="reveal" style={`--i: ${i % 3}`}>
+            <div
+              class="flip-card"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
+              aria-label={`${project.title}: flip to see my part`}
+            >
+              <div class="inner">
+                <div class="face front">
+                  <p class="tag">{project.tag}</p>
+                  <h3>{project.title}</h3>
+                  <p class="desc">{project.description}</p>
+                  <p class="meta">
+                    <strong>{project.role}</strong> · {project.team}
+                  </p>
+                  <ul class="stack">
+                    {project.stack.map((tool) => (
+                      <li>{tool}</li>
+                    ))}
+                  </ul>
+                  <p class="flip-hint">Flip to see my part ↻</p>
+                </div>
+
+                <div class="face back">
+                  {project.image ? (
+                    <img class="shot" src={project.image} alt={project.imageAlt} loading="lazy" />
+                  ) : (
+                    <div class="shot placeholder">{project.title}</div>
+                  )}
+
+                  <p class="label">What I worked on</p>
+                  <ul class="areas">
+                    {project.areas.map((area) => (
+                      <li class={area.mine ? "mine" : ""}>{area.name}</li>
+                    ))}
+                  </ul>
+                  <ul class="my-part">
+                    {project.myPart.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+
+                  <div class="back-foot">
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener">
+                        View project ↗
+                      </a>
+                    ) : (
+                      <span>Repo is private</span>
+                    )}
+                    <span>↻ Flip back</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".flip-card").forEach((card) => {
+    function toggle() {
+      const open = card.classList.toggle("open");
+      card.setAttribute("aria-pressed", String(open));
+    }
+
+    card.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) return;
+      toggle();
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggle();
+      }
+    });
+  });
+</script>
+
+<style>
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 0 32px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .mine-dot {
+    background: var(--accent);
+  }
+
+  .team-dot {
+    border: 1px solid var(--line);
+    background: #ffffff;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .grid > .reveal {
+    display: grid;
+    transition-delay: calc(var(--i) * 120ms);
+  }
+
+  /* Flip mechanics */
+  .flip-card {
+    display: grid;
+    perspective: 1400px;
+    cursor: pointer;
+  }
+
+  .flip-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 10px;
+  }
+
+  .inner {
+    display: grid;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card.open .inner {
+    transform: rotateY(180deg);
+  }
+
+  .face {
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+  }
+
+  .flip-card:hover .face {
+    border-color: var(--accent);
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    padding: 16px 20px 22px;
+  }
+
+  /* Front */
+  .tag {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 10px 0 8px;
+  }
+
+  .desc {
+    margin: 0 0 14px;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .meta strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .stack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+
+  .stack li {
+    font-size: 13px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+  }
+
+  .flip-hint {
+    margin: auto 0 0;
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* Back */
+  .shot {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .placeholder {
+    display: flex;
+    align-items: flex-end;
+    padding: 12px 14px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 16px 0 6px;
+  }
+
+  .areas {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+
+  .areas li {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+
+  .areas li.mine {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .my-part {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 15px;
+  }
+
+  .my-part li {
+    margin: 3px 0;
+  }
+
+  .back-foot {
+    margin-top: auto;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .back-foot span {
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .inner {
+      transition: none;
+    }
+  }
+</style>
