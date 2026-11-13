@@ -11,23 +11,29 @@ const statement = [
 ];
 
 const stats = [
+  { to: 40, prefix: "", suffix: "", label: "employees across kitchen, service, cashier, and support" },
+  { to: 10, prefix: "+", suffix: "%", label: "rainy-season revenue after redesigning the dining area" },
+  { to: 5, prefix: "", suffix: "+", label: "years running, from concept to daily operations" },
+];
+
+const education = [
   {
-    to: 40,
-    prefix: "",
-    suffix: "",
-    label: "employees across kitchen, service, cashier, and support",
+    logo: "/asu-logo.png",
+    logoAlt: "Arizona State University logo",
+    degree: "B.A. Applied Business and Technology Solutions",
+    school: "Arizona State University",
+    date: "August 2026 – May 2028",
+    coursework: "Business Statistics, Microeconomic Principles, Computer Applications and Information Technology",
+    organizations: "",
   },
   {
-    to: 10,
-    prefix: "+",
-    suffix: "%",
-    label: "rainy-season revenue after redesigning the dining area",
-  },
-  {
-    to: 5,
-    prefix: "",
-    suffix: "+",
-    label: "years running, from concept to daily operations",
+    logo: "dvc-logo.png",
+    logoAlt: "Diablo Valley College logo",
+    degree: "Computer Science",
+    school: "Diablo Valley College",
+    date: "January 2023 – May 2025",
+    coursework: "Object-Oriented Programming in C++, Data Structures, Calculus, Linear Algebra, Intro to Data Science",
+    organizations: "Code the Change, Google Developer Student Club, Model United Nations, Math Club, Soccer Club, Earth Club",
   },
 ];
 
@@ -46,8 +52,7 @@ const campus = [
     org: "DVC Model United Nations",
     role: "Vice President of Operations",
     date: "Jan 2024 – May 2025",
-    summary:
-      "Kept the club running smoothly and prepared members for Model United Nations conferences.",
+    summary: "Kept the club running smoothly and prepared members for Model United Nations conferences.",
     bullets: [
       "Organized club meetings, prepared members for conferences, and coordinated responsibilities and prep timelines each semester.",
       "Kept officers and members connected, so everyone knew about deadlines and upcoming events.",
@@ -57,8 +62,7 @@ const campus = [
     org: "DVC Soccer Club",
     role: "Secretary",
     date: "Aug 2023 – Aug 2024",
-    summary:
-      "Kept the club organized and helped plan its biggest event of the year.",
+    summary: "Kept the club organized and helped plan its biggest event of the year.",
     bullets: [
       "Recorded meeting notes and tracked action items so officers stayed aligned on decisions.",
       "Helped set the club's goals for the year with the officer team.",
@@ -69,8 +73,7 @@ const campus = [
     org: "DVC Math Club",
     role: "Chief Strategy Officer",
     date: "Aug 2023 – May 2024",
-    summary:
-      "Ran competition prep and events for a club of 20–30 regular members.",
+    summary: "Ran competition prep and events for a club of 20–30 regular members.",
     bullets: [
       "Led competition prep that supported DVC's 1st-place finish in AMATYC Round 1.",
       "Organized Data Science and Math in Business workshops, plus a guest talk from a data scientist.",
@@ -93,30 +96,12 @@ const campus = [
     org: "Google Developer Student Club",
     role: "Developer (UI/UX Design)",
     date: "Oct 2023 – Dec 2023",
-    summary:
-      "Designed Freedom Wall, a message board where students post and reply after signing in with Google.",
+    summary: "Designed Freedom Wall, a message board where students post and reply after signing in with Google.",
     bullets: [
       "Designed 4 core pages in Figma, from Google sign-in to a student's first post.",
       "Mapped user flows and screen states for posting and replying.",
       "Worked with 3 developers to build it as a responsive Next.js app.",
     ],
-  },
-];
-
-const education = [
-  {
-    school: "Arizona State University",
-    degree: "B.A. Applied Business and Technology Solutions",
-    date: "Aug 2026 – May 2028",
-    detail:
-      "Business Statistics, Microeconomic Principles, Computer Applications and Information Technology",
-  },
-  {
-    school: "Diablo Valley College",
-    degree: "Computer Science",
-    date: "Jan 2023 – May 2025",
-    detail:
-      "Object-Oriented Programming in C++, Data Structures and Algorithms, Calculus I-II,  Linear Algebra, Intro to Data Science",
   },
 ];
 ---
@@ -132,7 +117,7 @@ const education = [
     <!-- WORK EXPERIENCE -->
     <section>
       <p class="section-label">Work Experience</p>
-      <h2>Co-Founder & Operations Manager</h2>
+      <h2 class="role-title">Co-Founder & Operations Manager</h2>
       <p class="org">Kopi Deo · Jakarta, Indonesia</p>
       <p class="date">September 2021 – Present</p>
 
@@ -147,13 +132,8 @@ const education = [
       <div class="stats" id="stats">
         {
           stats.map((stat) => (
-            <div class="stat">
-              <p
-                class="num"
-                data-to={stat.to}
-                data-prefix={stat.prefix}
-                data-suffix={stat.suffix}
-              >
+            <div>
+              <p class="num" data-to={stat.to} data-prefix={stat.prefix} data-suffix={stat.suffix}>
                 {stat.prefix}0{stat.suffix}
               </p>
               <p class="stat-label">{stat.label}</p>
@@ -163,68 +143,77 @@ const education = [
       </div>
 
       <ul class="details">
-        <li>
-          Used customer feedback to find gaps in the menu and launch new
-          appetizers, increasing average revenue per customer.
-        </li>
-        <li>
-          Lead hiring, onboarding, payroll, inventory, and cash controls to keep
-          service quality and finances on track.
-        </li>
-        <li>
-          Added a high roof and clear rain blinds so every outdoor table stays
-          open in wet weather.
-        </li>
+        <li>Used customer feedback to find gaps in the menu and launch new appetizers, increasing average revenue per customer.</li>
+        <li>Lead hiring, onboarding, payroll, inventory, and cash controls to keep service quality and finances on track.</li>
+        <li>Added a high roof and clear rain blinds so every outdoor table stays open in wet weather.</li>
       </ul>
     </section>
 
-    <!-- CAMPUS INVOLVEMENT -->
+    <!-- EDUCATION -->
     <section>
-      <p class="section-label">Campus Involvement</p>
-      <div class="timeline" id="timeline">
-        <div class="track"></div>
-        <div class="fill" id="fill"></div>
+      <p class="section-label">Education</p>
+      <div class="edu" id="edu">
+        <div class="edu-track"></div>
+        <div class="edu-fill" id="edu-fill"></div>
         {
-          campus.map((item) => (
-            <div class="row">
-              <aside>
-                <h3>{item.org}</h3>
-                <p>{item.role}</p>
-                <p class="date">{item.date}</p>
-              </aside>
-              <div class="body">
-                <p>{item.summary}</p>
-                <ul>
-                  {item.bullets.map((bullet) => (
-                    <li>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
+          education.map((item) => (
+            <div class="edu-item">
+              {item.logo && <img class="logo" src={item.logo} alt={item.logoAlt} />}
+              <h3>{item.degree}</h3>
+              <p class="org">{item.school}</p>
+              <p class="date">{item.date}</p>
+              <p class="detail">
+                <strong>Relevant coursework:</strong> {item.coursework}
+              </p>
+              {item.organizations && (
+                <p class="detail">
+                  <strong>Organizations:</strong> {item.organizations}
+                </p>
+              )}
             </div>
           ))
         }
       </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- CAMPUS INVOLVEMENT -->
     <section>
-      <p class="section-label">Education</p>
-      {
-        education.map((item) => (
-          <div class="row edu">
-            <aside>
-              <h3>{item.school}</h3>
-              <p class="date">{item.date}</p>
-            </aside>
-            <div class="body">
-              <p>
-                <strong>{item.degree}</strong>
-              </p>
-              <p class="muted">Relevant coursework: {item.detail}</p>
-            </div>
-          </div>
-        ))
-      }
+      <p class="section-label">Campus Involvement</p>
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Campus involvement">
+          {
+            campus.map((item, i) => (
+              <button
+                role="tab"
+                id={`tab-${i}`}
+                aria-controls={`panel-${i}`}
+                aria-selected={i === 0 ? "true" : "false"}
+                tabindex={i === 0 ? "0" : "-1"}
+              >
+                {item.org}
+              </button>
+            ))
+          }
+        </div>
+
+        <div class="panels">
+          {
+            campus.map((item, i) => (
+              <div role="tabpanel" id={`panel-${i}`} aria-labelledby={`tab-${i}`} hidden={i !== 0}>
+                <h3>{item.role}</h3>
+                <p class="org">{item.org}</p>
+                <p class="date">{item.date}</p>
+                <p class="summary">{item.summary}</p>
+                <ul>
+                  {item.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
@@ -232,36 +221,28 @@ const education = [
 <script>
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Text highlight
-  const zone = document.getElementById("highlight")!;
-  const spans = Array.from(zone.querySelectorAll("span"));
-
-  // Timeline
-  const timeline = document.getElementById("timeline")!;
-  const fill = document.getElementById("fill")!;
-  const rows = Array.from(timeline.querySelectorAll<HTMLElement>(".row"));
-
   function clamp(value: number) {
     return Math.max(0, Math.min(1, value));
   }
+
+  // Text highlight + education timeline
+  const zone = document.getElementById("highlight")!;
+  const spans = Array.from(zone.querySelectorAll("span"));
+  const edu = document.getElementById("edu")!;
+  const eduFill = document.getElementById("edu-fill")!;
+  const eduItems = Array.from(edu.querySelectorAll<HTMLElement>(".edu-item"));
 
   function onScroll() {
     const vh = innerHeight;
 
     const z = zone.getBoundingClientRect();
-    const progress = reduceMotion
-      ? 1
-      : clamp((vh * 0.7 - z.top) / (z.height - vh * 0.5));
-    spans.forEach((span, i) =>
-      span.classList.toggle("on", progress > i / spans.length),
-    );
+    const progress = reduceMotion ? 1 : clamp((vh * 0.7 - z.top) / (z.height - vh * 0.5));
+    spans.forEach((span, i) => span.classList.toggle("on", progress > i / spans.length));
 
-    const t = timeline.getBoundingClientRect();
-    const filled = Math.max(0, Math.min(t.height, vh * 0.6 - t.top));
-    fill.style.height = `${filled}px`;
-    rows.forEach((row) =>
-      row.classList.toggle("lit", row.offsetTop + 12 <= filled),
-    );
+    const e = edu.getBoundingClientRect();
+    const filled = Math.max(0, Math.min(e.height - 12, vh * 0.6 - e.top));
+    eduFill.style.height = `${filled}px`;
+    eduItems.forEach((item) => item.classList.toggle("lit", item.offsetTop <= filled));
   }
 
   addEventListener("scroll", onScroll, { passive: true });
@@ -297,9 +278,36 @@ const education = [
         statsObserver.disconnect();
       }
     },
-    { threshold: 0.4 },
+    { threshold: 0.4 }
   );
   statsObserver.observe(statsBox);
+
+  // Campus involvement tabs
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('[role="tabpanel"]'));
+
+  function selectTab(index: number) {
+    tabs.forEach((tab, i) => {
+      const active = i === index;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panels[i].hidden = !active;
+    });
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => selectTab(i));
+    tab.addEventListener("keydown", (event) => {
+      let next = -1;
+      if (event.key === "ArrowDown" || event.key === "ArrowRight") next = (i + 1) % tabs.length;
+      if (event.key === "ArrowUp" || event.key === "ArrowLeft") next = (i - 1 + tabs.length) % tabs.length;
+      if (next >= 0) {
+        event.preventDefault();
+        selectTab(next);
+        tabs[next].focus();
+      }
+    });
+  });
 </script>
 
 <style>
@@ -322,8 +330,8 @@ const education = [
     margin: 0 0 32px;
   }
 
-  h2 {
-    font-size: clamp(28px, 4vw, 40px);
+  .role-title {
+    font-size: clamp(32px, 5vw, 48px);
     margin: 0 0 8px;
   }
 
@@ -342,10 +350,7 @@ const education = [
     margin: 2px 0 0;
   }
 
-  .muted {
-    color: var(--muted);
-  }
-
+  /* Text highlight */
   .highlight-zone {
     height: 200vh;
   }
@@ -357,10 +362,9 @@ const education = [
   }
 
   .highlight-text {
-    font-size: clamp(28px, 4.5vw, 48px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+    font-family: var(--font-head);
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
     margin: 0;
   }
 
@@ -373,6 +377,7 @@ const education = [
     color: var(--text);
   }
 
+  /* Counters */
   .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -381,11 +386,8 @@ const education = [
   }
 
   .num {
-    font-family:var(--font_head);
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 72px);
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    font-family: var(--font-head);
+    font-size: clamp(56px, 8vw, 80px);
     line-height: 1;
     color: var(--accent);
     margin: 0;
@@ -405,98 +407,161 @@ const education = [
     margin: 8px 0;
   }
 
-  .timeline {
+  /* Education timeline */
+  .edu {
     position: relative;
-    padding-left: 40px;
+    padding-left: 44px;
   }
 
-  .track,
-  .fill {
+  .edu-track,
+  .edu-fill {
     position: absolute;
-    left: 7px;
-    top: 0;
+    left: 9px;
+    top: 12px;
     width: 2px;
   }
 
-  .track {
+  .edu-track {
     bottom: 0;
     background: var(--line);
   }
 
-  .fill {
+  .edu-fill {
     height: 0;
     background: var(--accent);
   }
 
-  .row {
+  .edu-item {
     position: relative;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
-    padding: 8px 0 72px;
+    padding-bottom: 64px;
   }
 
-  .timeline .row::before {
+  .edu-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .edu-item::before {
     content: "";
     position: absolute;
-    left: -41px;
-    top: 12px;
-    width: 16px;
-    height: 16px;
+    left: -44px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--bg);
-    border: 3px solid var(--line);
-    transition:
-      background 0.3s ease,
-      border-color 0.3s ease;
+    border: 2px solid var(--line);
+    transition: border-color 0.3s ease;
   }
 
-  .timeline .row.lit::before {
-    background: var(--accent);
+  .edu-item.lit::before {
     border-color: var(--accent);
   }
 
-  aside {
-    position: sticky;
-    top: 40px;
-    align-self: start;
+  .logo {
+    display: block;
+    height: 64px;
+    width: auto;
+    margin-bottom: 20px;
   }
 
-  aside h3 {
-    font-size: 22px;
-    margin: 0 0 4px;
+  .edu-item h3 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 10px;
   }
 
-  aside p {
-    margin: 0;
+  .detail {
     color: var(--muted);
-    font-size: 15px;
+    max-width: 640px;
+    margin: 16px 0 0;
   }
 
-  .body p {
-    margin: 0 0 12px;
+  .detail strong {
+    color: var(--text);
+    font-weight: 500;
   }
 
-  .body ul {
+  /* Tabs */
+  .tabs {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .tablist {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--line);
+  }
+
+  .tablist button {
+    font: inherit;
+    text-align: left;
+    background: none;
+    border: none;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    padding: 12px 16px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .tablist button:hover {
+    color: var(--text);
+  }
+
+  .tablist button[aria-selected="true"] {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    font-weight: 500;
+  }
+
+  .tablist button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  [role="tabpanel"] h3 {
+    font-size: clamp(30px, 4vw, 40px);
+    margin: 0 0 6px;
+  }
+
+  .summary {
+    margin: 16px 0 0;
+  }
+
+  [role="tabpanel"] ul {
     padding-left: 20px;
-    margin: 0;
+    margin: 12px 0 0;
   }
 
-  .body li {
+  [role="tabpanel"] li {
     margin: 6px 0;
   }
 
-  .edu {
-    padding-bottom: 40px;
-  }
-
   @media (max-width: 760px) {
-    .row {
+    .tabs {
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 24px;
     }
-    aside {
-      position: static;
+
+    .tablist {
+      flex-direction: row;
+      overflow-x: auto;
+      border-left: none;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .tablist button {
+      white-space: nowrap;
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      margin: 0 0 -2px;
+    }
+
+    .tablist button[aria-selected="true"] {
+      border-bottom-color: var(--accent);
     }
   }
 </style>
