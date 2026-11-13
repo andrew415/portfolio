@@ -12,7 +12,7 @@ import Nav from "../components/Nav.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Familjen+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -60,7 +60,8 @@ import Nav from "../components/Nav.astro";
     --muted: #5a5a57;
     --line: #dad8d1;
     --accent: #0e6e5c;
-    --font: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Familjen Grotesk", sans-serif;
+    --font-head: "Instrument Serif", serif;
   }
 
   * {
@@ -71,7 +72,7 @@ import Nav from "../components/Nav.astro";
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: var(--font);
+    font-family: var(--font-body);
     font-size: 17px;
     line-height: 1.65;
   }
@@ -79,14 +80,10 @@ import Nav from "../components/Nav.astro";
   h1,
   h2,
   h3 {
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-  }
-
-  a {
-    color: var(--accent);
-    font-weight: 500;
+    font-family: var(--font-head);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
   }
 
   #progress {
